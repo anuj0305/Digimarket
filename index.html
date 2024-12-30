@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiMarketing</title>
+    <style>
+        .categories-menu {
+    padding: 2rem;
+    background-color: #528daf;
+    text-align: center;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.category-card {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+.category-card h3 {
+    margin: 0;
+}
+/* For Product Images */
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* This will ensure the image scales correctly while maintaining its aspect ratio */
+}
+
+/* For Category Images (if needed) */
+.category-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* For general layout of cards */
+.product-card, .category-card {
+    width: 300px; /* Set a fixed width for the cards */
+    margin: 0 auto; /* Center the cards */
+}
+
+.product-card img, .category-card img {
+    width: 100%; /* Makes sure the image fills the card container */
+    height: 200px; /* You can adjust this value to your preference */
+    object-fit: contain; /* Ensures the image doesn't stretch out */
+}
+/* About Section Styling */
+.about-info {
+    padding: 2rem;
+    background-color: #1e7789;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.about-info h2 {
+    color: #100c0c;
+}
+
+.about-info p {
+    color: #110d0d;
+    line-height: 1.6;
+}
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #00ff40;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 768px) {
+    .categories-container, .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card, .category-card {
+        width: 90%; /* Adjust card width on smaller screens */
+    }
+}
+#shopSection {
+    display: none;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+p {
+    color: #555;
+}
+body {
+    background-color: #f4f4f4; /* Light background */
+}
+
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+footer {
+    background-color: #030c05;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+.product-card, .category-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover, .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background: #5aae33;
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+header nav a:hover {
+    background-color: #0057b3;
+}
+.product-card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    .categories-container, .container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .product-card, .category-card {
+        width: 100%;
+    }
+}
+.hero {
+    text-align: center;
+    background: url('hero-image.jpg') center/cover no-repeat;
+    color: #130909;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+footer .footer-links a, footer .social-media a {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+header nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #007bff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+header nav a:hover, header nav a:focus {
+    background: #0056b3;
+}
+header nav a.active {
+    background: #0056b3;
+    font-weight: bold;
+}
+.product-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+    .categories-container, .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card, .category-card {
+        width: 90%; /* Adjust card width for mobile */
+    }
+
+    header nav {
+        flex-wrap: wrap;
+    }
+}
+.search-bar {
+    position: relative;
+    margin: 1rem auto;
+    max-width: 400px;
+}
+
+.suggestions-list {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.suggestions-list li {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+.notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #007bff;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for products..." />
+            <ul id="suggestions" class="suggestions-list"></ul>
+        </div>
+        
+        <h1>ShopOn</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="javascript:void(0);" id="shopLink">Shop</a>
+            <a href="javascript:void(0);" id="aboutLink">About</a> <!-- Link to toggle About section -->
+            <a href="javascript:void(0);" id="contactLink">Contact</a> <!-- Link to toggle Contact section -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- Categories Section -->
+        <section id="shopSection" class="categories-menu" style="display: none;">
+            <h2>Shop by Category</h2>
+            <div class="categories-container">
+                <a href="#" class="category-card">
+                    <h3>Clothes</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <h3>Accessories</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <h3>Furniture</h3>
+                </a>
+            </div>
+        </section>
+        
+
+        <!-- Hidden About Section -->
+        <section id="aboutSection" class="about-info" style="display: none;">
+            <h2>About E-Commerce Store</h2>
+            <p>Welcome to E-Commerce Store! We offer a wide variety of high-quality products at affordable prices. Our mission is to provide an easy and enjoyable shopping experience for our customers. Whether you're looking for clothes, accessories, or furniture, we have something for everyone.</p>
+            <p>Thank you for shopping with us!</p>
+        </section>
+
+        <!-- Hidden Contact Section -->
+        <section id="contactSection" class="contact-info" style="display: none;">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+            <p>Email: <a href="mailto:support@ecommerce.com">support@ecommerce.com</a></p>
+            <p>Phone: +1 800 123 4567</p>
+            <p>Address: 123 E-Commerce ,udham singh nagar,uttrakhand, india</p>
+        </section>
+
+
+        <section class="hero">
+            <h1>Welcome to Our E-Commerce Store!</h1>
+            <p>Discover sustainable, affordable, and high-quality products.</p>
+            <a href="#shopSection" class="btn">Start Shopping</a>
+        </section>
+       
+        
+        <div class="container">
+            <div class="product-card">
+                <h2>Featured Product</h2>
+                <img src="https://i.etsystatic.com/21854381/r/il/63cb1a/2482131334/il_1080xN.2482131334_481l.jpg" alt="Clothes 1">
+                <div class="product-details">
+                    <div id="quickViewModal" class="modal" style="display:none;">
+                        <div class="modal-content">
+                            <span class="modal-close">&times;</span>
+                            <h2>Product Details</h2>
+                            <p>Product information goes here.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Tuxedo</h3>
+                    <p>$500</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://cdn.shopify.com/s/files/1/1117/3536/products/Rolex_1ct_blue_1_2_b970451f-0987-44fb-aeab-341b4f6dd40b.jpg?v=1559890466" alt="Clothes 2">
+                <div class="product-details">
+                    <h3>Rolex</h3>
+                    <p>$5200</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/393266/02/sv01/fnd/IND/fmt/png/Slipstream-Unisex-Bball-Sneakers" alt="Clothes 3">
+                <div class="product-details">
+                    <h3>Puma</h3>
+                    <p>$90</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <footer>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
+            </div>
+        </footer>
+        
+        <p>&copy; 2024 E-Commerce Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+         // JavaScript to toggle the visibility of the About section
+ document.getElementById('aboutLink').addEventListener('click', function() {
+    var aboutSection = document.getElementById('aboutSection');
+    if (aboutSection.style.display === 'none') {
+        aboutSection.style.display = 'block';  // Show About section
+    } else {
+        aboutSection.style.display = 'none';   // Hide About section
+    }
+});
+
+// JavaScript to toggle the visibility of the Contact section
+document.getElementById('contactLink').addEventListener('click', function() {
+    var contactSection = document.getElementById('contactSection');
+    if (contactSection.style.display === 'none') {
+        contactSection.style.display = 'block';  // Show Contact section
+    } else {
+        contactSection.style.display = 'none';   // Hide Contact section
+    }
+});
+document.getElementById('shopLink').addEventListener('click', function() {
+    var contactSection = document.getElementById('shopSection');
+    if (contactSection.style.display === 'none') {
+        contactSection.style.display = 'block';  // Show Contact section
+    } else {
+        contactSection.style.display = 'none';   // Hide Contact section
+    }
+});
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+}
+
+document.getElementById('aboutLink').addEventListener('click', () => toggleSection('aboutSection'));
+document.getElementById('contactLink').addEventListener('click', () => toggleSection('contactSection'));
+document.getElementById('shopLink').addEventListener('click', () => toggleSection('shopSection'));
+
+// Reusable toggle function
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+}
+
+// Event listener for Shop link
+document.getElementById('shopLink').addEventListener('click', () => toggleSection('shopSection'));
+
+// Event listeners for About and Contact links
+document.getElementById('aboutLink').addEventListener('click', () => toggleSection('aboutSection'));
+document.getElementById('contactLink').addEventListener('click', () => toggleSection('contactSection'));
+const navLinks = document.querySelectorAll('header nav a');
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    let scrollPos = window.scrollY + 50; // Adjust for navbar height
+
+    sections.forEach((section) => {
+        if (scrollPos > section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+            navLinks.forEach((link) => link.classList.remove('active'));
+            document.querySelector(`a[href="#${section.id}"]`).classList.add('active');
+        }
+    });
+});
+const quickViewButtons = document.querySelectorAll('.btn-quick-view');
+
+quickViewButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        const productId = e.target.dataset.productId;
+        const modal = document.querySelector('#quickViewModal');
+        modal.style.display = 'block';
+        // Populate modal with product details dynamically
+        // Example: modal.querySelector('.modal-content').innerHTML = `<h2>Product ${productId}</h2>`;
+    });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+    document.querySelector('#quickViewModal').style.display = 'none';
+});
+const products = ["Clothes 1", "Clothes 2", "Accessories", "Furniture"];
+const searchInput = document.querySelector('#searchInput');
+const suggestions = document.querySelector('#suggestions');
+
+searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    suggestions.innerHTML = '';
+    if (query) {
+        const matches = products.filter(product => product.toLowerCase().includes(query));
+        matches.forEach(match => {
+            const li = document.createElement('li');
+            li.textContent = match;
+            li.addEventListener('click', () => {
+                searchInput.value = match;
+                suggestions.innerHTML = '';
+            });
+            suggestions.appendChild(li);
+        });
+    }
+});
+document.querySelectorAll('.btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = 'Item added to cart!';
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 2000);
+    });
+});
+
+    </script>
+</body>
+</html>
